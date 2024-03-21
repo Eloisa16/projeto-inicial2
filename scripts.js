@@ -10,15 +10,15 @@ var cep = document.getElementById("CEP");
 
 var logadouro = document.getElementById("logadouro");
 
-var Número = document.getElementById("logadouro");
+var numero = document.getElementById("logadouro");
 
-var Complemento = document.getElementById("logadouro");
+var complemento = document.getElementById("logadouro");
 
-var Bairro = document.getElementById("logadouro");
+var bairro = document.getElementById("logadouro");
 
-var Cidade = document.getElementById("logadouro");
+var cidade = document.getElementById("logadouro");
 
-var Estado = document.getElementById("logadouro");
+var estado = document.getElementById("logadouro");
 
 var saida = document.getElementById("saida-de-dados");
 
@@ -34,10 +34,10 @@ function alertar(event){
     "\n Email: " + email.value +
      "\n Telefone: " + Telefone.value +
      "\n CEP:" + cep.value +
-     "\n Logadouro:" + Logadouro.value +
-     "\n Número:" + Número.value +
-     "\n Complemento:" + Complemento.value +
-     "\n Bairro:" + Bairro.value +
-     "\n Cidade:" + Cidade.value +
-     "\n Estado:" + Estado.value ;
+     "\n Logadouro:" + logadouro.value +
+     "\n Número:" + numero.value +
+     "\n Complemento:" + complemento.value +
+     "\n Bairro:" + bairro.value +
+     "\n Cidade:" + cidade.value +
+     "\n Estado:" + estado.value ;
 }
