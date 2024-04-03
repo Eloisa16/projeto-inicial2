@@ -1,14 +1,15 @@
 var botao = document.getElementById("botao");
 botao.addEventListener("click", alertar, false);
+
 var nome = document.getElementById("nome");
 
 var email = document.getElementById("email");
 
-var Telefone = document.getElementById("Telefone");
+var telefone = document.getElementById("telefone");
 
-var cep = document.getElementById("CEP");
+var cep = document.getElementById("cep");
 
-var logadouro = document.getElementById("logadouro");
+var logradouro = document.getElementById("logradouro");
 
 var numero = document.getElementById("numero");
 
@@ -22,6 +23,7 @@ var estado = document.getElementById("estado");
 
 var saida = document.getElementById("saida-de-dados");
 
+
 function alertar(event){
     //alert("Você clicou no botão!!!" + "" +nome.value);
 
@@ -33,8 +35,23 @@ function alertar(event){
    const url =`https://viacep.com.br/ws/${cep.value}/json`;
 
    fetch(url)
-   .then(resposta=>resposta.json())
-   .then(dados=>alert(dados.bairro))
+   .then(function(resposta){
+      return resposta.json();
+   })
+   .then(
+    function(dadosDoEndereco){
+        logradouro.value = dadosDoEndereco.logradouro;
+        bairro.value = dadosDoEndereco.bairro;
+        cidade.value = dadosDoEndereco.localidade;
+        estado.value = dadosDoEndereco.uf;
+        complemento.value = dadosDoEndereco.complemento;
+
+    }
+   )
+   .catch(function(e){
+    alert(e.message());
+   });
+   
    
 
    
@@ -42,7 +59,7 @@ function alertar(event){
     "\n Email: " + email.value +
      "\n Telefone: " + Telefone.value +
      "\n CEP:" + cep.value +
-     "\n Logadouro:" + logadouro.value +
+     "\n Logradouro:" + logradouro.value +
      "\n Número:" + numero.value +
      "\n Complemento:" + complemento.value +
      "\n Bairro:" + bairro.value +
